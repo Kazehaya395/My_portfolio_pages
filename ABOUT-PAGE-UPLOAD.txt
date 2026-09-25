@@ -1,24 +1,29 @@
 ABOUT PAGE — UPLOAD INSTRUCTIONS
 
-This ZIP contains only the files needed for the About page.
+This package replaces ONLY the About page.
 
-Copy into your existing GitHub Pages repository:
+From this ZIP, upload/replace:
 
 1. about/index.html
-   Replace the existing file at:
+   Destination:
    /about/index.html
 
 2. about/about.css
-   Upload to:
+   Destination:
    /about/about.css
 
-The page reuses the shared files you already installed for the homepage:
-   /assets/css/style.css
-   /assets/js/theme.js
+3. assets/images/profile.png
+   Destination:
    /assets/images/profile.png
 
-Do NOT create another assets folder from this ZIP and do NOT replace your shared CSS/JS.
-The profile image is referenced from the existing homepage location:
-   /assets/images/profile.png
+IMPORTANT:
+- Keep your existing shared /assets/css/style.css
+- Keep your existing shared /assets/js/theme.js
+- Keep your existing homepage index.html
+- Do not upload the ZIP itself into the repository.
+- The About page is built to reuse the existing site-wide navigation and dark/light theme.
 
-The About page is designed to remain visually consistent with the homepage while having its own page-specific layout.
+The page-specific CSS is isolated in about/about.css so later pages can be redesigned independently without changing the common design system.
+
+SOURCE NOTE:
+The wording is based on the information on the original Google Sites About Me page and the current portfolio About page, with the presentation rewritten to be more natural and modern rather than copying the old format.
