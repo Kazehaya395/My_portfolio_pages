@@ -1,24 +1,25 @@
 (() => {
-  const key = "vishal-portfolio-theme";
+  const KEY = "vishal-portfolio-theme";
   const root = document.documentElement;
-  const saved = localStorage.getItem(key);
-  const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  root.dataset.theme = saved || preferred;
+  const saved = localStorage.getItem(KEY);
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  root.dataset.theme = saved || (prefersDark ? "dark" : "light");
 
   const button = document.querySelector(".theme-toggle");
   if (!button) return;
 
-  const update = () => {
-    const dark = root.dataset.theme === "dark";
+  const setTheme = (theme) => {
+    root.dataset.theme = theme;
+    localStorage.setItem(KEY, theme);
+    const dark = theme === "dark";
     button.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-    button.title = dark ? "Switch to light mode" : "Switch to dark mode";
+    button.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
   };
 
   button.addEventListener("click", () => {
-    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-    localStorage.setItem(key, root.dataset.theme);
-    update();
+    setTheme(root.dataset.theme === "dark" ? "light" : "dark");
   });
 
-  update();
+  setTheme(root.dataset.theme);
 })();

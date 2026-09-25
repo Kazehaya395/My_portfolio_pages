@@ -1,0 +1,55 @@
+HOME PAGE — UPLOAD INSTRUCTIONS
+================================
+
+This ZIP contains ONLY the files for the homepage and its shared visual assets.
+
+Upload/replace these files in your GitHub repository:
+
+1. Replace the existing root file:
+   index.html
+   → repository root
+
+2. Replace the existing shared stylesheet:
+   assets/css/style.css
+   → repository/assets/css/style.css
+
+3. Replace the existing theme script:
+   assets/js/theme.js
+   → repository/assets/js/theme.js
+
+4. Add the profile image:
+   assets/images/profile.png
+   → repository/assets/images/profile.png
+
+Repository structure after upload:
+
+portfolio-repo/
+├── index.html
+├── about/
+├── data/
+├── projects/
+├── software/
+├── experience/
+├── resume/
+└── assets/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── theme.js
+    └── images/
+        └── profile.png
+
+IMPORTANT
+---------
+Do not upload the ZIP itself into GitHub Pages as a website file.
+Extract the ZIP and copy the files into the matching directories.
+
+The existing section folders are intentionally left untouched.
+We can build/update those pages separately later while keeping the same
+navigation, typography, spacing, borders and dark/light theme system.
+
+Homepage image path:
+assets/images/profile.png
+
+GitHub Pages should publish from the repository root (or the configured
+branch/root folder used by your current Pages setup).
