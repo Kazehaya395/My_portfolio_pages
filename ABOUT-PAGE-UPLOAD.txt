@@ -1,29 +1,23 @@
-ABOUT PAGE — UPLOAD INSTRUCTIONS
+ABOUT PAGE — MODERN V2
 
-This package replaces ONLY the About page.
+Replace/add ONLY:
+- /about/index.html
+- /about/about.css
 
-From this ZIP, upload/replace:
+Keep:
+- /assets/css/style.css
+- /assets/js/theme.js
+- /assets/images/profile.png
+- homepage and all other pages
 
-1. about/index.html
-   Destination:
-   /about/index.html
+Content emphasis:
+- Personal character and working style first
+- Honest career progression
+- Technology enthusiasm beyond data analysis
+- Professional point of view
+- Learning/certifications as supporting information
 
-2. about/about.css
-   Destination:
-   /about/about.css
-
-3. assets/images/profile.png
-   Destination:
-   /assets/images/profile.png
-
-IMPORTANT:
-- Keep your existing shared /assets/css/style.css
-- Keep your existing shared /assets/js/theme.js
-- Keep your existing homepage index.html
-- Do not upload the ZIP itself into the repository.
-- The About page is built to reuse the existing site-wide navigation and dark/light theme.
-
-The page-specific CSS is isolated in about/about.css so later pages can be redesigned independently without changing the common design system.
-
-SOURCE NOTE:
-The wording is based on the information on the original Google Sites About Me page and the current portfolio About page, with the presentation rewritten to be more natural and modern rather than copying the old format.
+Learning section wording:
+"06 / LEARNING"
+"What I've studied."
+"A few of the certifications and formal studies that have contributed to my work in data and analytics."
