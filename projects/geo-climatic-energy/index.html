@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Geo-Climatic EU Energy Strategy Analysis — an end-to-end renewable energy analytics case study by Vishal Nath.">
+  <title>Geo-Climatic EU Energy Strategy Analysis — Vishal Nath</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="./project.css">
+  <script src="../../assets/js/theme.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="../../">Vishal Nath</a>
+      <div class="nav-links">
+        <a href="../../about/">About</a>
+        <a href="../../data/">Data &amp; Analytics</a>
+        <a href="../">Projects</a>
+        <a href="../../software/">Software</a>
+        <a href="../../experience/">Experience</a>
+        <a href="../../resume/">Resume</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Toggle theme"><span aria-hidden="true">◐</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <div class="hero-text">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> PROJECT CASE STUDY <span class="eyebrow-line"></span> ENERGY ANALYTICS</div>
+        <h1>Geo-climatic EU energy <span>strategy analysis.</span></h1>
+        <p class="hero-lede">Turning European weather data into a clearer view of renewable potential, seasonal demand and climate-related operational risk.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#dashboard">Explore the dashboard <span aria-hidden="true">↘</span></a>
+          <a class="button" href="#method">How it was built</a>
+        </div>
+        <div class="stack" aria-label="Tools used">
+          <span>Microsoft Fabric</span><span>PySpark</span><span>Power BI</span><span>DAX</span><span>Weather APIs</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-art-top"><span>CLIMATE × ENERGY</span><span>EU / 08 CITIES</span></div>
+        <svg class="energy-illustration" viewBox="0 0 540 430" role="img" aria-label="Illustration of European renewable energy infrastructure with sun, solar panels and wind turbines">
+          <defs>
+            <linearGradient id="hill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#bfe8d5"/><stop offset="1" stop-color="#6dbca7"/></linearGradient>
+            <linearGradient id="panel" x1="0" x2="1"><stop offset="0" stop-color="#143f68"/><stop offset="1" stop-color="#317db0"/></linearGradient>
+          </defs>
+          <circle cx="394" cy="88" r="43" fill="#f4c65e"/>
+          <g stroke="#e9ad39" stroke-width="4" stroke-linecap="round">
+            <path d="M394 25v-12M394 163v-12M331 88h-12M469 88h-12M349 43l-9-9M448 142l-9-9M439 43l9-9M340 142l9-9"/>
+          </g>
+          <path d="M22 302 Q120 230 205 278 T390 260 T530 285 V390 H22Z" fill="url(#hill)" opacity=".75"/>
+          <path d="M18 333 Q124 285 222 324 T523 316 V405 H18Z" fill="#8fcdb7"/>
+          <g stroke="#ecf7f1" stroke-width="3" fill="none" opacity=".85">
+            <path d="M35 362 Q160 325 268 357 T514 349"/><path d="M55 382 Q170 346 280 378 T505 372"/>
+          </g>
+          <!-- wind turbines -->
+          <g stroke="#f7fbff" stroke-width="5" stroke-linecap="round">
+            <path d="M135 285V100M135 100L93 71M135 100L174 63M135 100L137 151"/>
+            <path d="M235 291V137M235 137L201 114M235 137L267 103M235 137L238 177"/>
+            <path d="M462 282V144M462 144L428 122M462 144L492 111M462 144L465 180"/>
+          </g>
+          <g fill="#ffffff">
+            <circle cx="135" cy="100" r="7"/><circle cx="235" cy="137" r="6"/><circle cx="462" cy="144" r="6"/>
+          </g>
+          <!-- solar field -->
+          <g transform="translate(65 284) skewY(-8)">
+            <path d="M0 0L158 0L182 76L24 76Z" fill="#edf6f5" opacity=".85"/>
+            <path d="M10 8L151 8L169 66L28 66Z" fill="url(#panel)" stroke="#d7eff7" stroke-width="2"/>
+            <path d="M56 8L72 66M103 8L117 66M18 27L157 27M23 47L163 47" stroke="#83c5df" stroke-width="1.5"/>
+            <path d="M28 66V84M169 66V84M24 84H182" stroke="#456d6c" stroke-width="4"/>
+          </g>
+          <!-- battery and grid -->
+          <g transform="translate(330 280)">
+            <rect x="0" y="0" width="74" height="93" rx="11" fill="#f6fbff" stroke="#397f88" stroke-width="3"/>
+            <rect x="22" y="-8" width="30" height="9" rx="3" fill="#397f88"/>
+            <path d="M43 17L25 49H39L31 72L54 39H40Z" fill="#eebc47"/>
+            <text x="37" y="85" font-size="10" text-anchor="middle" fill="#315d68" font-weight="700">STORAGE</text>
+          </g>
+          <g stroke="#285a75" stroke-width="2.5" fill="none" opacity=".9">
+            <path d="M177 327L330 327"/><path d="M265 302L330 302"/><path d="M404 323L470 323"/>
+          </g>
+          <g fill="#173e54">
+            <rect x="433" y="323" width="74" height="49" rx="4"/><path d="M426 323L470 296L514 323Z" fill="#2c7087"/>
+            <rect x="446" y="337" width="12" height="13" fill="#f4d27d"/><rect x="466" y="337" width="12" height="13" fill="#f4d27d"/><rect x="486" y="337" width="12" height="13" fill="#f4d27d"/>
+          </g>
+          <g>
+            <rect x="20" y="30" width="147" height="48" rx="12" fill="#ffffff" stroke="#d9e6e8"/>
+            <text x="34" y="49" font-size="9" fill="#66828a" font-weight="700" letter-spacing="1.2">RESOURCE MIX</text>
+            <text x="34" y="66" font-size="13" fill="#173e54" font-weight="700">Solar + wind + storage</text>
+          </g>
+        </svg>
+        <div class="art-foot"><span class="live-dot"></span> From weather observations to planning signals</div>
+      </div>
+    </section>
+
+    <section class="project-facts container">
+      <div><span class="fact-label">DATASET</span><strong>5,272</strong><span>daily records reported</span></div>
+      <div><span class="fact-label">GEOGRAPHY</span><strong>8 cities</strong><span>across Europe</span></div>
+      <div><span class="fact-label">PERIOD</span><strong>22 months</strong><span>Jan 2024 – Oct 2025</span></div>
+      <div><span class="fact-label">DELIVERABLES</span><strong>ETL + BI</strong><span>notebook and report</span></div>
+    </section>
+
+    <section class="section container problem-section">
+      <div class="section-kicker">01 / THE QUESTION</div>
+      <div class="two-col-heading">
+        <h2>Renewable resources are local. <span>Energy systems are connected.</span></h2>
+        <div><p>Solar radiation, wind conditions and seasonal temperatures differ from one city to another. A resource that performs well in one place or season may be less reliable elsewhere.</p><p>This project explores how city-level weather patterns can help compare renewable potential, estimate heating and cooling demand, and flag conditions that may affect operations.</p></div>
+      </div>
+      <div class="challenge-grid">
+        <article class="challenge-card"><div class="number">A</div><div class="mini-icon sun-icon">☼</div><h3>Resource variability</h3><p>Compare solar and wind conditions across locations and seasons instead of assuming a uniform European profile.</p><div class="card-line"></div></article>
+        <article class="challenge-card"><div class="number">B</div><div class="mini-icon temp-icon">↕</div><h3>Demand shifts</h3><p>Use temperature-based indicators to understand when heating or cooling demand may rise.</p><div class="card-line"></div></article>
+        <article class="challenge-card"><div class="number">C</div><div class="mini-icon risk-icon">!</div><h3>Operational exposure</h3><p>Identify weather conditions and seasonal patterns that could inform maintenance and resilience planning.</p><div class="card-line"></div></article>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="container">
+        <div class="section-kicker">02 / THE BUILD</div>
+        <div class="section-heading-row"><h2>A pipeline built to turn weather into <span>usable metrics.</span></h2><p>The original workflow combines API-based collection, distributed transformation, semantic calculations and interactive reporting.</p></div>
+        <div class="pipeline">
+          <article><div class="pipeline-step">01</div><div class="pipeline-symbol">⌁</div><h3>Collect</h3><p>Retrieve weather observations for Athens, Berlin, London, Madrid, Oslo, Paris, Rome and Warsaw.</p><span>Weather API</span></article>
+          <div class="pipeline-arrow">→</div>
+          <article><div class="pipeline-step">02</div><div class="pipeline-symbol">⇄</div><h3>Transform</h3><p>Use PySpark ETL to prepare raw records and derive weather and energy-related fields.</p><span>Microsoft Fabric · PySpark</span></article>
+          <div class="pipeline-arrow">→</div>
+          <article><div class="pipeline-step">03</div><div class="pipeline-symbol">ƒx</div><h3>Model</h3><p>Build DAX measures for demand indicators, resource potential, scoring and risk monitoring.</p><span>Semantic model · DAX</span></article>
+          <div class="pipeline-arrow">→</div>
+          <article><div class="pipeline-step">04</div><div class="pipeline-symbol">▥</div><h3>Explore</h3><p>Present city comparisons, time trends, weather distributions and summary scores in Power BI.</p><span>Power BI</span></article>
+        </div>
+        <div class="metric-note"><div class="metric-note-icon">i</div><p><strong>Methodology note</strong> The reported outputs are based on the formulas and assumptions documented in the original project. They should be interpreted as modelled indicators, not measured electricity production or a bankable engineering assessment.</p></div>
+      </div>
+    </section>
+
+    <section class="section container metrics-section">
+      <div class="section-kicker">03 / SELECTED RESULTS</div>
+      <div class="section-heading-row"><h2>Location changes the <span>renewable picture.</span></h2><p>Selected values transcribed from the original project page. These are the project's calculated estimates and are not independently validated here.</p></div>
+      <div class="result-grid">
+        <article class="result-card solar-card"><div class="result-top"><span>01 / SOLAR POTENTIAL</span><span class="result-glyph">☀</span></div><h3>Athens</h3><div class="big-number">1,793 <small>kWh/kWp/yr</small></div><div class="comparison"><span>Oslo</span><div class="bar-track"><i style="width:56%"></i></div><b>1,003</b></div><p class="result-caption">The original analysis estimates about 79% more annual solar potential in Athens than Oslo.</p></article>
+        <article class="result-card wind-card"><div class="result-top"><span>02 / WIND POTENTIAL</span><span class="result-glyph">〰</span></div><h3>London</h3><div class="big-number">2,429 <small>kWh/kWp/yr*</small></div><div class="comparison"><span>Athens</span><div class="bar-track"><i style="width:62%"></i></div><b>1,501</b></div><p class="result-caption">The original analysis reports stronger modelled wind potential for London than Athens.</p><p class="tiny-note">*Unit/definition should be checked against the underlying model before treating this as a standard wind-yield metric.</p></article>
+        <article class="result-card risk-card"><div class="result-top"><span>03 / DOWNTIME INDICATOR</span><span class="result-glyph">⌁</span></div><h3>Madrid</h3><div class="big-number">47<small>%</small></div><div class="risk-meter"><span style="width:47%"></span></div><p class="result-caption">The project flags Madrid as having a high share of days classified as energy downtime under its monitoring logic.</p><p class="tiny-note">This is a model-defined indicator, not a verified grid-outage statistic.</p></article>
+      </div>
+      <div class="results-footnote">The values above are reproduced from the supplied screenshots. Confirm calculation definitions and units in the notebook before using them for external decision-making.</div>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="container">
+        <div class="section-kicker">04 / INTERACTIVE REPORT</div>
+        <div class="dashboard-heading"><div><h2>Explore the <span>Power BI dashboard.</span></h2><p>Inspect the city comparisons, weather distributions and modelled energy indicators in the published report.</p></div><a class="button primary" href="https://app.powerbi.com/view?r=eyJrIjoiYzk0NWNmZWEtNTk2OC00ZDcxLTlmZWMtMmJjMjgwYTRkNmQ5IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener noreferrer">Open report in Power BI ↗</a></div>
+        <div class="dashboard-frame">
+          <div class="frame-top"><div class="window-dots"><i></i><i></i><i></i></div><span>POWER BI SERVICE / PUBLIC REPORT</span><a href="https://app.powerbi.com/view?r=eyJrIjoiYzk0NWNmZWEtNTk2OC00ZDcxLTlmZWMtMmJjMjgwYTRkNmQ5IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener noreferrer">Open separately ↗</a></div>
+          <iframe title="Power BI — Geo-Climatic EU Energy Strategy Analysis" src="https://app.powerbi.com/view?r=eyJrIjoiYzk0NWNmZWEtNTk2OC00ZDcxLTlmZWMtMmJjMjgwYTRkNmQ5IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" loading="lazy" allowfullscreen="true" frameborder="0"></iframe>
+        </div>
+        <p class="embed-note">If the report does not load, use “Open report in Power BI”. Embedded reports depend on Power BI's public-sharing and browser settings.</p>
+      </div>
+    </section>
+
+    <section class="section container notebook-section">
+      <div class="notebook-copy">
+        <div class="section-kicker">05 / UNDER THE HOOD</div>
+        <h2>Read the <span>ETL notebook.</span></h2>
+        <p>The notebook documents the data collection and transformation work behind the report. Review the code to understand how the source records are retrieved and prepared before the semantic calculations and visuals.</p>
+        <div class="notebook-actions"><a class="button primary" href="https://gist.github.com/Kazehaya395/ddfbba4662ff0ac75e4bc58aa9123ef4" target="_blank" rel="noopener noreferrer">View notebook on GitHub ↗</a><span>GitHub Gist · PySpark</span></div>
+        <div class="code-chips"><span>API ingestion</span><span>PySpark</span><span>Data transformation</span><span>Derived metrics</span></div>
+      </div>
+      <div class="gist-panel">
+        <div class="gist-panel-header"><div class="file-icon">{"}"}</div><div><strong>ETL notebook</strong><span>Embedded source preview</span></div><a href="https://gist.github.com/Kazehaya395/ddfbba4662ff0ac75e4bc58aa9123ef4" target="_blank" rel="noopener noreferrer">↗</a></div>
+        <script src="https://gist.github.com/Kazehaya395/ddfbba4662ff0ac75e4bc58aa9123ef4.js"></script>
+      </div>
+    </section>
+
+    <section class="section takeaways-section">
+      <div class="container">
+        <div class="section-kicker">06 / INTERPRETATION</div>
+        <div class="takeaway-layout"><div><h2>From a dashboard to <span>better questions.</span></h2><p>The value of the project is not just the scores. It is the comparison framework: a way to ask where conditions differ, when patterns change and which assumptions deserve closer examination.</p></div><div class="takeaway-list">
+          <article><span>01</span><div><h3>Compare locations before generalising</h3><p>Resource potential and seasonal patterns differ across the cities in the dataset.</p></div></article>
+          <article><span>02</span><div><h3>Make assumptions visible</h3><p>Scores and downtime flags depend on thresholds and formulas; their definitions should travel with the result.</p></div></article>
+          <article><span>03</span><div><h3>Use findings as planning signals</h3><p>Storage, maintenance and grid-interconnection ideas are hypotheses to investigate with engineering, cost and grid data—not conclusions from weather data alone.</p></div></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="container next-project">
+      <div><span class="section-kicker">NEXT</span><h2>Curious about the rest of my work?</h2><p>Explore more case studies and technical builds.</p></div>
+      <a class="button primary" href="../">Back to projects ↗</a>
+    </section>
+  </main>
+  <footer class="site-footer container"><div>© 2026 Vishal Nath</div><div class="footer-links"><a href="https://www.linkedin.com/in/vishal-nath-8261611b9" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/Kazake95" target="_blank" rel="noopener noreferrer">GitHub</a></div></footer>
+</body>
+</html>
